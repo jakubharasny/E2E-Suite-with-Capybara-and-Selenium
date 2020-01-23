@@ -2,7 +2,6 @@
 
 require 'site_prism'
 
-
 class ForWhat < SitePrism::Section
   elements :asset, '.sc-bZQynM'
 end
@@ -35,11 +34,8 @@ class Form < SitePrism::Page
   element :email, '#text-id-email'
   element :first_name, '#text-id-firstName'
   element :last_name, '#text-id-lastName'
-  element :phone, '#text-id-phone' 
+  element :phone, '#text-id-phone'
   element :income, '#text-id-annualIncome'
   element :rent, '#text-id-rent'
   element :postcode, '#text-id-postCode'
 end
-
-
-
