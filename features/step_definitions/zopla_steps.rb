@@ -15,24 +15,46 @@ Given 'I start new loan application' do
 end
 
 Given 'I input necessary information for the form to get a qoute' do
+  # For now added few nasty sleeps but is not enough yet as some steps are flaky which is I believe
+  # caused by page validation, need to investigate this further to create a workaround for this issue
+
   @form = Form.new
-  binding.pry
   @form.loan_reason.asset[rand(0..3)].click
   @form.email.set(Faker::Internet.email)
   @form.user_title.title_checkbox[rand(0..3)].click
   @form.first_name.set(Faker::Name.first_name)
   @form.last_name.set(Faker::Name.last_name)
   
-  date = Faker::Date.in_date_period(year: rand(1900..2002), month: rand(1..12))
+  date = Faker::Date.in_date_period(year: rand(1900..2000), month: rand(1..12))
   @form.date_of_birth.day.set(date.day)
   @form.date_of_birth.month.set(date.month)
   @form.date_of_birth.year.set(date.year)
 
-  @form.phone.set(Faker::PhoneNumber.cell_phone)
-  # Probably better constrains should be implemented for phone number
-  # Faker gem might not be enough
+  # Faker gem and his method `Faker::PhoneNumber.cell_phone` seems not be enough 
+  # for this case, for now generats some of the available numbers
+  @form.phone.set("0#{rand(7000000000..7999999999)}")
+  
+  sleep 1
   @form.employment.employment_checkbox[rand(0..7)].click
-  @form.income.set(15000..200000)
+  sleep 1
+  @form.employment.employment_checkbox[rand(0..7)].click
+  @form.income.set(rand(15000..200000))
   @form.know_home_section.know_home_section[rand(0..3)].click
+  sleep 1
+  @form.rent.set(rand(500..2000))
+
+  #Below just an example of the postcode, doesn't include every correct possible combination
+  # random letter
+  def l 
+    alphabet = ('a'..'z').to_a
+    alphabet[rand(0..25)]
+  end
+
+  # random number
+  def n
+    rand(0..9)
+  end
+
+  @form.postcode.set("#{l}#{l}#{n}#{l}#{n}#{l}#{l}")
 end
 
