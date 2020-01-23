@@ -24,6 +24,9 @@ initial setup
 - 'webdrivers'
 
 and also:
+
+- capybara-screenshot/cucumber ) useful tool. It takes screenshot on failure and save in your choosen path or for example takes a screenshot after test finish. 
+
 - 'site_prism' (allows to use pageObject model => all the selectors are stored in ./lib/pages)
 
 - 'pry' (great for debugging e.g. add `binding.pry` wherever you want the test to stop and debug)

@@ -9,6 +9,7 @@ end
 Given 'I start new loan application' do
   @home_page.loans_btn.click
   @loans_page = Loans.new
+  binding.pry
   @loans_page.loan_value.first.set(rand(1..25000))
   @loans_page.loan_option(text: "#{rand(1..5)} year").first
   @loans_page.get_loan_rates.first.click
@@ -56,5 +57,8 @@ Given 'I input necessary information for the form to get a qoute' do
   end
 
   @form.postcode.set("#{l}#{l}#{n}#{l}#{n}#{l}#{l}")
+  
+  # Uncommend it if you want capybara to take screenshot after the test finish.
+  # Capybara::Screenshot.screenshot_and_save_page
 end
 
