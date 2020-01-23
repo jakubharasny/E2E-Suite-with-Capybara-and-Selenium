@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
 source 'http://rubygems.org'
 
-
 gem 'capybara'
-gem 'chromedriver-helper'
 gem 'cucumber'
-gem 'pry'
 gem 'selenium-webdriver'
 gem 'site_prism'
-
+gem 'webdrivers'
+gem 'pry'
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
