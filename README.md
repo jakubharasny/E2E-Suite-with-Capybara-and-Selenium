@@ -1,6 +1,6 @@
 # Example of E2E suite using Capybara, Selenium and Siteprism as basic
 
-Example of a framework with ruby. As example of scenario is written for Zopla website. Contains a basic example of E2E framework and setup. Written test is also an example, contains some validation however it needs improvement. Some steps are still flaky or need better libraries or custom code to validate or the input. The main reason was to create a simple E2E framework using capybara, cucumber and siteprism ( A Page Object Model DSL for Capybara )
+Example of a E2E framework with selenium written in ruby. Example scenario is written for Zopla website. Some steps are still flaky or need better libraries or custom code to validate or the input. The main reason was to create a simple E2E framework using capybara, cucumber and siteprism ( A Page Object Model DSL for Capybara )
 
 # Setup
 Make sure you have installed ruby on your system (if you are using mac ruby should be already included, for the linux distros and Windows extra setup must be required)
@@ -38,5 +38,4 @@ For now if you want to use head or headless mode, just change `Capybara.default_
 Scenario `./features/journeys/zopla_loan.feature`
 Steps    `./features/step_definitions/zopla_steps.rb`
 
-written test is not finished yet. Few vailidation need improvement and also some steps are flaky ( more in the steps ) plus if needed there could be more steps in the feature and less logic per step in the steps file, or logic moved somewhere else to clean it up. Whatever needed 
-
+Few vailidation need improvement and also some steps are flaky ( more in the steps ).
