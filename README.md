@@ -37,5 +37,3 @@ For now if you want to use head or headless mode, just change `Capybara.default_
 # Test
 Scenario `./features/journeys/zopla_loan.feature`
 Steps    `./features/step_definitions/zopla_steps.rb`
-
-Few vailidation need improvement and also some steps are flaky ( more in the steps ).
